@@ -1,13 +1,3 @@
-#This program takes a 'input image' and template as input (along with some specifications)
-#Then generates a textured background image
-
-#each pixel on the 'input image' represents a square pattern on the output image
-#The template determines which pixels map to which pattern based on color values
-
-#usage: MapGenerator <inputFileName> <outputFileName> <templateFileName> <patternSize>
-#do not add .png extension to output file name, program will do this automatically
-#exit conditions: 0 = fine, 1 = illegal arguments, 2 = file not found (from args), 3 = read error/file not found (from template file)
-
 from sys import argv
 from PIL import Image
 import Classes
@@ -37,7 +27,7 @@ except IOError:
 	print "Template file named: '%s' could not be found" % templateName
 	exit(2)
 
-#create instance of class that will oversee program
+#create instance of 'patternManager' class that will oversee creation of output image
 patternManager = Classes.PatternManager(patternSize)	
 
 #Import data from template

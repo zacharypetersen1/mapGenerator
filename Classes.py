@@ -1,6 +1,6 @@
 from PIL import Image
 
-#contains classes for MapGenerator
+#contains classes used by MapGenerator script
 
 #stores all patterns and contains method that generates output image
 class PatternManager(object):
@@ -14,7 +14,7 @@ class PatternManager(object):
 	def appendRefPattern(self, RGBValue, pattern):
 		self.refPatterns.append(ReferencePattern(RGBValue, pattern, self.patternSize))
 		
-	#import all information from template to create list of Reference Patterns
+	#import all templates listed in template file to create list of Reference Patterns
 	def importTemplate(self, templateFile):
 
 		#loop through each line of the Template file
@@ -30,7 +30,7 @@ class PatternManager(object):
 			try:
 				readRed, readGreen, readBlue, patternName = elements
 			except ValueError:
-				print "Incorrect amount of arguments in line within Template file:"
+				print "Incorrect usage within Template file:"
 				print "Incorrect line: %s" % line
 				print "Correct Usage: <redValue> <greenValue> <blueValue> <fileName>"
 				exit(3)
