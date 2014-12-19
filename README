@@ -1,6 +1,6 @@
 Zachary Petersen
 
-This script takes a 'input image' and template as input (along with some specifications)
+This script takes an 'input image' and also a 'template file' as input
 Then generates a textured background image
 
 each pixel on the 'input image' represents a square pattern on the output image
