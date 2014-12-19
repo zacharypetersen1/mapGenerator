@@ -1,0 +1,11 @@
+Zachary Petersen
+
+This program takes a 'input image' and template as input (along with some specifications)
+Then generates a textured background image
+
+each pixel on the 'input image' represents a square pattern on the output image
+The template determines which pixels map to which pattern based on color values
+
+usage: MapGenerator <inputFileName> <outputFileName> <templateFileName> <patternSize>
+do not add .png extension to output file name, program will do this automatically
+exit conditions: 0 = fine, 1 = illegal arguments, 2 = file not found (from args), 3 = read error/file not found (from template file)

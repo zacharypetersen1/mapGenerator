@@ -40,7 +40,7 @@ except IOError:
 #create instance of class that will oversee program
 patternManager = Classes.PatternManager(patternSize)	
 
-#Import data from template then input image
+#Import data from template
 patternManager.importTemplate(templateFile)
 
 #create the output image
