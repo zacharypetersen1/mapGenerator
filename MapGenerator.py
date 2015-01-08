@@ -5,12 +5,12 @@ import Classes
 #check if arguments were entered correctly
 if len(argv) != 5:
 	print "Incorrect amount of arguments"
-	print "usage: MapGenerator <inputFileName> <outputFileName> <templateFileName> <patternSize>"
+	print "usage: MapGenerator <inputFileName> <outputFileName> <templateFileName> <tileSize>"
 	exit(1)
 	
 #unpack arguments
-scriptName, inputName, outputName, templateName, readPatternSize = argv
-patternSize = int(readPatternSize)
+scriptName, inputName, outputName, templateName, readTileSize = argv
+tileSize = int(readTileSize)
 
 
 #Try to load input image
@@ -27,13 +27,13 @@ except IOError:
 	print "Template file named: '%s' could not be found" % templateName
 	exit(2)
 
-#create instance of 'patternManager' class that will oversee creation of output image
-patternManager = Classes.PatternManager(patternSize)	
+#create instance of 'TileManager' class that will oversee creation of output image
+tileManager = Classes.TileManager(tileSize)	
 
-#Import data from template
-patternManager.importTemplate(templateFile)
+#Import data from template file
+tileManager.importTemplate(templateFile)
 
 #create the output image
-patternManager.readAndWrite(inputImage, outputName)
+tileManager.readAndWrite(inputImage, outputName)
 print 'Success!'
 exit(0)
